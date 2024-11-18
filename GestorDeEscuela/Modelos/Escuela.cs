@@ -1,7 +1,7 @@
 
 public class Escuela
 {
-     public int ContadorIdEscuela =1; 
+     public static int ContadorIdEscuela =1; 
      public int IdEscuela {get; set;}
      public string NombreEscuela {get; set;}
      public string DireccionEscuela{get; set;}
@@ -11,7 +11,7 @@ public class Escuela
       public List<Estudiantes> ListaDeEstudiantes { get; set; }
       public List<Materia> ListaDeMaterias { get; set; }
 
-    public Escuela (int IdEscuela, string nombreEscuela, string direccionEscuela, TipoDeEscuelaEnum tipoDeEscuela)
+    public Escuela ( string nombreEscuela, string direccionEscuela, TipoDeEscuelaEnum tipoDeEscuela)
     {
         IdEscuela = ContadorIdEscuela ++;
         NombreEscuela = nombreEscuela;
@@ -29,4 +29,40 @@ public class Escuela
         Escuela,
         univerisidad
     }
+
+
+    
+
+    public void RegistrarEstudiantes(Estudiantes estudiante)
+{
+    var nuevoEstudiante = new Estudiantes(estudiante.NombreEstudiante, estudiante.DireccionEstudiante,
+                                          estudiante.EdadEstudiante, estudiante.SexoEstudiante,
+                                          estudiante.EstatusEstudiante, DateTime.Now, DateTime.Now);
+
+    ListaDeEstudiantes.Add(nuevoEstudiante);
+
+    Console.WriteLine($"Estudiante {nuevoEstudiante.NombreEstudiante} con ID {nuevoEstudiante.IdEstudiante} se agregó correctamente.");
 }
+
+    public void RegistrarProfesor(Profesores profesoresE)
+    {
+
+        var ProfesorNuevo = new Profesores( profesoresE.NombreProfesor, profesoresE.DireccionProfesor, 
+         DateTime.Now, DateTime.Now, profesoresE.EstatusProfesor);
+
+        ListaDeProfesores.Add(profesoresE);
+        Console.WriteLine($"Profesor {ProfesorNuevo.NombreProfesor} Con Id{ProfesorNuevo.IdProfesor} se agrego correctamente");     
+    }
+
+
+    public void RegistrarMateria(Materia materiaE)
+    {
+
+        var MateriaNueva = new Materia( materiaE.NombreMateria, materiaE.EstatusMateria);
+
+        ListaDeMaterias.Add(materiaE);
+        Console.WriteLine($"Materia {MateriaNueva.NombreMateria} Con Id{MateriaNueva.IdMateria} se agrego correctamente");     
+    }
+}
+
+

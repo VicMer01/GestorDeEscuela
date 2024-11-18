@@ -1,0 +1,15 @@
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.AssemblyInfoInputs.cache
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.AssemblyInfo.cs
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.csproj.CoreCompileInputs.cache
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.sourcelink.json
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\bin\Debug\net8.0\GestorDeEscuela.exe
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\bin\Debug\net8.0\GestorDeEscuela.deps.json
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\bin\Debug\net8.0\GestorDeEscuela.runtimeconfig.json
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\bin\Debug\net8.0\GestorDeEscuela.dll
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\bin\Debug\net8.0\GestorDeEscuela.pdb
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.dll
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\refint\GestorDeEscuela.dll
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.pdb
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.genruntimeconfig.cache
+C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\ref\GestorDeEscuela.dll

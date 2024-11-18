@@ -1,11 +1,11 @@
 public class Aula
 {
-    public int ContadorIdAula =1;
+    public static int ContadorIdAula =1;
     public int IdAula{get; set;}
     public string NombreAula{get; set;}
     public EstatusAulaEnum EstatusAula{get; set;}
 
-    public Aula(int idAula, string nombreAula, EstatusAulaEnum estatusAula)
+    public Aula( string nombreAula, EstatusAulaEnum estatusAula)
     {
         IdAula = ContadorIdAula++;
         NombreAula = nombreAula;
