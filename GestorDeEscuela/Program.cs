@@ -43,8 +43,8 @@
             Console.Clear();
             Console.WriteLine("=== Gestión de Escuela ===");
             Console.WriteLine("1. Registrar Estudiante");
-            Console.WriteLine("2. Registrar Profesor");
-            Console.WriteLine("3. Ver lista de Estudiantes");
+            Console.WriteLine("2. Cambiar estatus del Estudiante");
+            Console.WriteLine("3. Asignar materia a Estudiante");
             Console.WriteLine("4. Ver lista de Profesores");
             Console.WriteLine("5. Salir");
             Console.Write("Seleccione una opción: ");
@@ -57,7 +57,7 @@
                     RegistrarEstudiante(miEscuela);
                     break;
                 case "2":
-                    CambirEstatusEstudiante(miEscuela);
+                    CambiarEstatusEstudiante(miEscuela);
                     break;
                 case "3":
                     MostrarListaEstudiantes(miEscuela);
@@ -102,19 +102,41 @@
         Console.ReadLine();
     }
 
-    static void CambirEstatusEstudiante(Escuela escuela)
+
+    static void CambiarEstatusEstudiante(Escuela escuela)
+{
+    Console.Clear();
+    Console.WriteLine("=== Cambio de Estatus del Estudiante ===");
+    
+    Console.WriteLine("Ingrese el ID del estudiante que desea modificar:");
+    string idEstudiante = Console.ReadLine();
+    
+    
+    if (idEstudiante == "00")
     {
-        Console.Clear();
-        Console.WriteLine("===Cambio De Estatus Estuidiante===");
-        Console.WriteLine("Ingrese El Id Del estudiante que Desea Modificar");
-        string idEstudianteEscuela = Console.ReadLine();
-        Console.WriteLine("Ingrese El nuevo estatus Del estudiante que Desea Modificar");
-        string EstatusEstudianteEscuela = Console.ReadLine();
-
-
-        Console.WriteLine("En caso de que no recuerde el id precione el 0 luego dele enter Para ver lista de estudiantes");
-       MostrarListaEstudiantes(escuela); 
+        Console.WriteLine("Lista de estudiantes:");
+        MostrarListaEstudiantes(escuela);
+        Console.WriteLine("Ingrese nuevamente el ID del estudiante:");
+        idEstudiante = Console.ReadLine();
     }
+
+    
+    var estudiante = escuela.ListaDeEstudiantes.FirstOrDefault(e => e.IdEstudiante.ToString() == idEstudiante);
+    if (estudiante == null)
+    {
+        Console.WriteLine("El estudiante con el ID proporcionado no existe.");
+        return;
+    }
+
+    
+    Console.WriteLine($"Estudiante seleccionado: {estudiante.NombreEstudiante}");
+    Console.WriteLine("Ingrese el nuevo estatus del estudiante: 0-Activo 1-Inactivo");
+    var nuevoEstatuss = Enum.Parse<Estudiantes.EstatusEstudiantesEnum>(Console.ReadLine(), true);
+    
+    estudiante.EstatusEstudiante = nuevoEstatuss;
+    Console.WriteLine($"Estatus del estudiante {estudiante.NombreEstudiante} actualizado a '{nuevoEstatuss}' exitosamente.");
+}
+
 
     static void RegistrarProfesor(Escuela escuela)
     {
