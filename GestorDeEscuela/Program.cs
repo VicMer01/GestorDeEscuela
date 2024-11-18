@@ -44,8 +44,8 @@
             Console.WriteLine("=== Gestión de Escuela ===");
             Console.WriteLine("1. Registrar Estudiante");
             Console.WriteLine("2. Cambiar estatus del Estudiante");
-            Console.WriteLine("3. Asignar materia a Estudiante");
-            Console.WriteLine("4. Ver lista de Profesores");
+            Console.WriteLine("3. Mostrar lista de estudiante");
+            Console.WriteLine("4. Asignar materia al estudiante");
             Console.WriteLine("5. Salir");
             Console.Write("Seleccione una opción: ");
 
@@ -132,12 +132,59 @@
     Console.WriteLine($"Estudiante seleccionado: {estudiante.NombreEstudiante}");
     Console.WriteLine("Ingrese el nuevo estatus del estudiante: 0-Activo 1-Inactivo");
     var nuevoEstatuss = Enum.Parse<Estudiantes.EstatusEstudiantesEnum>(Console.ReadLine(), true);
-    
+
     estudiante.EstatusEstudiante = nuevoEstatuss;
     Console.WriteLine($"Estatus del estudiante {estudiante.NombreEstudiante} actualizado a '{nuevoEstatuss}' exitosamente.");
 }
 
 
+    static void MostrarListaEstudiantes(Escuela escuela)
+    {
+        Console.Clear();
+        Console.WriteLine("=== Lista de Estudiantes ===");
+
+        if (escuela.ListaDeEstudiantes.Count == 0)
+        {
+            Console.WriteLine("No hay estudiantes registrados.");
+        }
+        else
+        {
+            foreach (var estudiante in escuela.ListaDeEstudiantes)
+            {
+                Console.WriteLine($"ID: {estudiante.IdEstudiante}, Nombre: {estudiante.NombreEstudiante}, Edad: {estudiante.EdadEstudiante}, Fecha Ingreso: {estudiante.FechaIngreso}, Estado: {estudiante.EstatusEstudiante}" );
+            }
+        }
+
+        Console.WriteLine("Presione Enter para continuar.");
+        Console.ReadLine();
+    }
+
+    static void AsignarMateriaEstudiante(Escuela escuela)
+    {
+        Console.Clear();
+        Console.WriteLine("=== Asignar Materia Al Estudante");
+    }
+
+    
+    static void AgregarMaterias(Escuela escuela)
+    {
+        Console.Clear();
+        Console.WriteLine("=== Agregar Materia ===");
+
+        Console.WriteLine("Nombre de la Materia");
+        string NombreMateriaes= Console.ReadLine();
+
+        Console.Write("Ingrese el estado de la materia (Activo, Inactivo): ");
+        var estado = Enum.Parse<Materia.EstatusMateriaEnum>(Console.ReadLine(), true);
+
+        var materia = new Materia (NombreMateriaes , estado);
+        escuela.RegistrarMateria(materia);
+
+        Console.WriteLine("Materia registrada correctamente. Presione Enter para continuar.");
+        Console.ReadLine();
+       
+
+    }
     static void RegistrarProfesor(Escuela escuela)
     {
         Console.Clear();
@@ -165,26 +212,7 @@
         Console.ReadLine();
     }
 
-    static void MostrarListaEstudiantes(Escuela escuela)
-    {
-        Console.Clear();
-        Console.WriteLine("=== Lista de Estudiantes ===");
-
-        if (escuela.ListaDeEstudiantes.Count == 0)
-        {
-            Console.WriteLine("No hay estudiantes registrados.");
-        }
-        else
-        {
-            foreach (var estudiante in escuela.ListaDeEstudiantes)
-            {
-                Console.WriteLine($"ID: {estudiante.IdEstudiante}, Nombre: {estudiante.NombreEstudiante}, Edad: {estudiante.EdadEstudiante}, Fecha Ingreso: {estudiante.FechaIngreso}, Estado: {estudiante.EstatusEstudiante}" );
-            }
-        }
-
-        Console.WriteLine("Presione Enter para continuar.");
-        Console.ReadLine();
-    }
+    
 
     static void MostrarListaProfesores(Escuela escuela)
     {

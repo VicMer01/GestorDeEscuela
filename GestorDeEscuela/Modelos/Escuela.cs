@@ -1,7 +1,7 @@
 
 public class Escuela
 {
-     public static int ContadorIdEscuela =1; 
+     public static int ContadorIdEscuela =0; 
      public int IdEscuela {get; set;}
      public string NombreEscuela {get; set;}
      public string DireccionEscuela{get; set;}
