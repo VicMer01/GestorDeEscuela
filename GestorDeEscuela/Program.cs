@@ -57,7 +57,7 @@
                     RegistrarEstudiante(miEscuela);
                     break;
                 case "2":
-                    RegistrarProfesor(miEscuela);
+                    CambirEstatusEstudiante(miEscuela);
                     break;
                 case "3":
                     MostrarListaEstudiantes(miEscuela);
@@ -102,6 +102,20 @@
         Console.ReadLine();
     }
 
+    static void CambirEstatusEstudiante(Escuela escuela)
+    {
+        Console.Clear();
+        Console.WriteLine("===Cambio De Estatus Estuidiante===");
+        Console.WriteLine("Ingrese El Id Del estudiante que Desea Modificar");
+        string idEstudianteEscuela = Console.ReadLine();
+        Console.WriteLine("Ingrese El nuevo estatus Del estudiante que Desea Modificar");
+        string EstatusEstudianteEscuela = Console.ReadLine();
+
+
+        Console.WriteLine("En caso de que no recuerde el id precione el 0 luego dele enter Para ver lista de estudiantes");
+       MostrarListaEstudiantes(escuela); 
+    }
+
     static void RegistrarProfesor(Escuela escuela)
     {
         Console.Clear();
@@ -142,7 +156,7 @@
         {
             foreach (var estudiante in escuela.ListaDeEstudiantes)
             {
-                Console.WriteLine($"ID: {estudiante.IdEstudiante}, Nombre: {estudiante.NombreEstudiante}, Edad: {estudiante.EdadEstudiante}, Fecha Ingreso: {estudiante.FechaIngreso}");
+                Console.WriteLine($"ID: {estudiante.IdEstudiante}, Nombre: {estudiante.NombreEstudiante}, Edad: {estudiante.EdadEstudiante}, Fecha Ingreso: {estudiante.FechaIngreso}, Estado: {estudiante.EstatusEstudiante}" );
             }
         }
 

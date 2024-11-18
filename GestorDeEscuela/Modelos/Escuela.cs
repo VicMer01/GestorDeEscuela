@@ -44,6 +44,23 @@ public class Escuela
     Console.WriteLine($"Estudiante {nuevoEstudiante.NombreEstudiante} con ID {nuevoEstudiante.IdEstudiante} se agregó correctamente.");
 }
 
+    public void EditarEstatusEstudiante(int EstudianteIdE, Estudiantes.EstatusEstudiantesEnum NuevoEstado)
+    {
+        
+        Estudiantes? EstudianteEncontrado = ListaDeEstudiantes.Find(t => t.IdEstudiante == EstudianteIdE );
+        {
+            if (EstudianteEncontrado != null)
+            {
+                EstudianteEncontrado.EstatusEstudiante = NuevoEstado;
+                Console.WriteLine($"Estudiante{EstudianteEncontrado.NombreEstudiante} modificado con exito");
+            } 
+            else 
+            {
+                Console.WriteLine($"Estudiante No encontrado");
+            }
+        } 
+    }
+
     public void RegistrarProfesor(Profesores profesoresE)
     {
 

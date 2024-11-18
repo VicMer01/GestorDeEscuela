@@ -1,6 +1,6 @@
 public class Estudiantes
 {
-    public static int ContadorIdEstudiante =1; 
+    public static int ContadorIdEstudiante =0; 
      public int IdEstudiante {get; set;}
      public string NombreEstudiante {get; set;}
      public string DireccionEstudiante{get; set;}
