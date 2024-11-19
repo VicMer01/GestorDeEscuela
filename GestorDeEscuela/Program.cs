@@ -4,41 +4,51 @@
     {
         var miEscuela = new Escuela("Escuela Central", "Calle 123", Escuela.TipoDeEscuelaEnum.Escuela);
 
-       /* Console.WriteLine("\n¿Desea registrar un estudiante? (s/n)");
-        string respuesta = Console.ReadLine().ToLower();
-
-        while (respuesta == "s")
+        while (true)
         {
-            Console.Write("Ingrese el nombre del estudiante: ");
-            string nombre = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("===Gestion de Escuela===");
+            Console.WriteLine("===1- Gestion de Estudiante===");
+            Console.WriteLine("===2- Gestion de Profesor===");
+            Console.WriteLine("===3- Gestion de Materia===");
+            Console.WriteLine("===4- Gestion de Aula===");
+            Console.WriteLine("===5- Gestion de Expediente===");
+            Console.WriteLine("===6- Salir===");
 
-            Console.Write("Ingrese la dirección del estudiante: ");
-            string direccion = Console.ReadLine();
+            Console.WriteLine("Selecciona una opcion:");
 
-            Console.Write("Ingrese la edad del estudiante: ");
-            string edad = Console.ReadLine();
+            string opcion1 = Console.ReadLine();
+            switch (opcion1)
+            {
+                case "1":
+                    GestionEstudiante(miEscuela);
+                    break;
+                case "2":
+                    GestionProfesor(miEscuela);
+                    break;
+                case "3":
+                    GestionMateria(miEscuela);
+                    break;
+                case "4":
+                    GestionAula(miEscuela);
+                    break;
+                case "5":
+                    GestionExpediente(miEscuela);
+                    break;
+                case "6":
+                    Console.WriteLine("Saliendo del programa. ¡Adiós!");
+                    return;
+                default:
+                    Console.WriteLine("Opción inválida. Presione Enter para continuar.");
+                    Console.ReadLine();
+                    break;
+            }
 
-            Console.Write("Ingrese el sexo del estudiante (Masculino, Femenino, Otros): ");
-            var sexo = Enum.Parse<Estudiantes.SexoEstudianteEnum>(Console.ReadLine(), true);
+        
 
-            Console.Write("Ingrese el estado del estudiante (Activo, Inactivo): ");
-            var estado = Enum.Parse<Estudiantes.EstatusEstudiantesEnum>(Console.ReadLine(), true);
-
-            var estudiante = new Estudiantes(nombre, direccion, edad, sexo, estado, DateTime.Now, DateTime.Now);
-            miEscuela.RegistrarEstudiantes(estudiante);
-
-            Console.WriteLine("\n¿Desea registrar otro estudiante? (s/n)");
-            respuesta = Console.ReadLine().ToLower();
-        }
-
-        Console.WriteLine("Registro finalizado. Estudiantes registrados:");
-        foreach (var est in miEscuela.ListaDeEstudiantes)
+        static void GestionEstudiante(Escuela escuela)
         {
-            Console.WriteLine($"ID: {est.IdEstudiante}, Nombre: {est.NombreEstudiante}");
-        }
-*/
-
-         while (true)
+            while (true)
         {
             Console.Clear();
             Console.WriteLine("=== Gestión de Escuela ===");
@@ -54,16 +64,16 @@
             switch (opcion)
             {
                 case "1":
-                    RegistrarEstudiante(miEscuela);
+                    RegistrarEstudiante(escuela);
                     break;
                 case "2":
-                    CambiarEstatusEstudiante(miEscuela);
+                    CambiarEstatusEstudiante(escuela);
                     break;
                 case "3":
-                    MostrarListaEstudiantes(miEscuela);
+                    MostrarListaEstudiantes(escuela);
                     break;
                 case "4":
-                    MostrarListaProfesores(miEscuela);
+                    AsignarMateriaEstudiante(escuela);
                     break;
                 case "5":
                     Console.WriteLine("Saliendo del programa. ¡Adiós!");
@@ -164,27 +174,48 @@
         Console.Clear();
         Console.WriteLine("=== Asignar Materia Al Estudante");
     }
+}
 
-    
-    static void AgregarMaterias(Escuela escuela)
-    {
-        Console.Clear();
-        Console.WriteLine("=== Agregar Materia ===");
+  static void GestionProfesor(Escuela escuela)
+  {
 
-        Console.WriteLine("Nombre de la Materia");
-        string NombreMateriaes= Console.ReadLine();
+     while (true)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Gestión de Profesor ===");
+            Console.WriteLine("1. Registrar Profesor");
+            Console.WriteLine("2. Cambiar estatus del Profesor");
+            Console.WriteLine("3. Mostrar lista de Profesor");
+            Console.WriteLine("4. Asignar materia al Profesor");
+            Console.WriteLine("5. Salir");
+            Console.Write("Seleccione una opción: ");
 
-        Console.Write("Ingrese el estado de la materia (Activo, Inactivo): ");
-        var estado = Enum.Parse<Materia.EstatusMateriaEnum>(Console.ReadLine(), true);
+            string opcion = Console.ReadLine();
 
-        var materia = new Materia (NombreMateriaes , estado);
-        escuela.RegistrarMateria(materia);
+            switch (opcion)
+            {
+                case "1":
+                    RegistrarProfesor(escuela);
+                    break;
+                case "2":
+                    CambiarEstatusProfesor(escuela);
+                    break;
+                case "3":
+                    MostrarListaProfesores(escuela);
+                    break;
+                case "4":
+                    AsignarMateriaProfesor(escuela);
+                    break;
+                case "5":
+                    Console.WriteLine("Saliendo del programa. ¡Adiós!");
+                    return;
+                default:
+                    Console.WriteLine("Opción inválida. Presione Enter para continuar.");
+                    Console.ReadLine();
+                    break;
+            }
+        }
 
-        Console.WriteLine("Materia registrada correctamente. Presione Enter para continuar.");
-        Console.ReadLine();
-       
-
-    }
     static void RegistrarProfesor(Escuela escuela)
     {
         Console.Clear();
@@ -233,6 +264,56 @@
 
         Console.WriteLine("Presione Enter para continuar.");
         Console.ReadLine();
+    }
+
+    static void CambiarEstatusProfesor(Escuela escuela)
+    {
+
+    }
+
+    static void AsignarMateriaProfesor(Escuela escuela)
+    {
+        
+    }
+  }
+
+    static void GestionMateria(Escuela escuela)
+  {
+
+  }
+
+  static void GestionAula(Escuela escuela)
+  {
+
+  }
+  static void GestionExpediente(Escuela escuela)
+  {
+
+  }   
+
+         
+
+    
+    static void AgregarMaterias(Escuela escuela)
+    {
+        Console.Clear();
+        Console.WriteLine("=== Agregar Materia ===");
+
+        Console.WriteLine("Nombre de la Materia");
+        string NombreMateriaes= Console.ReadLine();
+
+        Console.Write("Ingrese el estado de la materia (Activo, Inactivo): ");
+        var estado = Enum.Parse<Materia.EstatusMateriaEnum>(Console.ReadLine(), true);
+
+        var materia = new Materia (NombreMateriaes , estado);
+        escuela.RegistrarMateria(materia);
+
+        Console.WriteLine("Materia registrada correctamente. Presione Enter para continuar.");
+        Console.ReadLine();
+       
+
+    }
+    
     }
 }
 }
