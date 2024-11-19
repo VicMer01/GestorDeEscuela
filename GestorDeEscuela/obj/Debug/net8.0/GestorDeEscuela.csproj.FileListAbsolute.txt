@@ -13,3 +13,18 @@ C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\
 C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.pdb
 C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.genruntimeconfig.cache
 C:\Users\ingvi\OneDrive\Documentos\PROYECTOS C#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\ref\GestorDeEscuela.dll
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\bin\Debug\net8.0\GestorDeEscuela.exe
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\bin\Debug\net8.0\GestorDeEscuela.deps.json
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\bin\Debug\net8.0\GestorDeEscuela.runtimeconfig.json
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\bin\Debug\net8.0\GestorDeEscuela.dll
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\bin\Debug\net8.0\GestorDeEscuela.pdb
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.AssemblyInfoInputs.cache
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.AssemblyInfo.cs
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.csproj.CoreCompileInputs.cache
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.sourcelink.json
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.dll
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\refint\GestorDeEscuela.dll
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.pdb
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\GestorDeEscuela.genruntimeconfig.cache
+c:\Users\Vmaria\Documents\PROYECTOC#\GestorDeEscuela\GestorDeEscuela\obj\Debug\net8.0\ref\GestorDeEscuela.dll
