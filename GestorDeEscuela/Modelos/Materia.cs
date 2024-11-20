@@ -7,7 +7,7 @@ public class Materia{
 
     public Materia(string nombreMateria, EstatusMateriaEnum estatusMateria)
     {
-        IdMateria =ContadorIdMateria++;
+        
         NombreMateria = nombreMateria;
         EstatusMateria = estatusMateria;
     }

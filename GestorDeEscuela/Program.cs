@@ -278,8 +278,147 @@
 
             static void GestionMateria(Escuela escuela)
             {
-                
+                string opcion = Console.ReadLine();
+                while (true)
+                {
+                    Console.WriteLine("=== Gestión de Materia ===");
+                    Console.WriteLine("1. Registrar Materia");
+                    Console.WriteLine("2. Cambiar estatus de materia");
+                    Console.WriteLine("3. Mostrar lista de materia");
+                    Console.WriteLine("4. Asignar materia al estudiante");
+                    Console.WriteLine("5. Salir");
+                    Console.Write("Seleccione una opción: ");
+
+                    string opcionm = Console.ReadLine();
+
+                    switch (opcionm)
+                    {
+                        case "1":
+                            AgregarMaterias(escuela);
+                            break;
+
+                        case "2":
+                            EditarEstatusMateria(escuela);
+                            break;
+
+                        case "3":
+                            MostrarListaMateria(escuela);
+                            break;
+
+                        case "4":
+                            AsignarMateriaAlEstudiante(escuela);
+                            break;
+
+                        case "5":
+                            Console.WriteLine("Saliendo del programa. ¡Adiós!");
+                            return;
+                        default:
+                            Console.WriteLine("Opción inválida. Presione Enter para continuar.");
+                            Console.ReadLine();
+                            break;
+
+                    }
+
+                    static void AgregarMaterias(Escuela escuela)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("=== Agregar Materia ===");
+
+                        Console.WriteLine("Nombre de la Materia");
+                        string NombreMateriaes = Console.ReadLine();
+
+                        Console.Write("Ingrese el estado de la materia (0- Activo, 1- Inactivo): ");
+                        var estado = Enum.Parse<Materia.EstatusMateriaEnum>(Console.ReadLine(), true);
+
+                        var materia = new Materia(NombreMateriaes, estado);
+                        escuela.RegistrarMateria(materia);
+
+                        Console.WriteLine("Materia registrada correctamente. Presione Enter para continuar.");
+                        Console.ReadLine();
+
+
+
+                        static void GestionAula(Escuela escuela)
+                        {
+
+                        }
+
+                    }
+
+                    static void EditarEstatusMateria(Escuela escuela)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("=== Editar Materia ===");
+
+                        Console.WriteLine("Si desea ver la lista de materia favor de escribir 00 luego enter para ver lista");
+                        Console.WriteLine("Ingrese el id De la materia que desea modificar");
+                        string IdMateriaest = Console.ReadLine();
+
+                        if (IdMateriaest == "00")
+                        {
+                            Console.WriteLine("Lista de Materia:");
+                            MostrarListaMateria(escuela);
+                            Console.WriteLine("Ingrese nuevamente el ID de la materia:");
+                            IdMateriaest = Console.ReadLine();
+                        }
+
+                        var materia = escuela.ListaDeMaterias.FirstOrDefault(e => e.IdMateria.ToString() == IdMateriaest);
+                        if (materia == null)
+                        {
+                            Console.WriteLine("La materia con el ID proporcionado no existe.");
+                            return;
+                        }
+
+                        Console.WriteLine($"Materia seleccionada: {materia.NombreMateria}");
+                        Console.WriteLine("Ingrese el nuevo estatus de la materia: 0-Activo 1-Inactivo");
+                        var nuevoEstatus = Enum.Parse<Materia.EstatusMateriaEnum>(Console.ReadLine(), true);
+
+                        materia.EstatusMateria = nuevoEstatus;
+                        Console.WriteLine($"Estatus de la materia {materia.NombreMateria} actualizado a '{nuevoEstatus}' exitosamente.");
+
+                        {
+
+                        }
+
+                    }
+
+                    static void MostrarListaMateria(Escuela escuela)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("=== Lista de materia ===");
+
+                        if (escuela.ListaDeMaterias.Count == 0)
+                        {
+                            Console.WriteLine("No hay Materia registrados.");
+                        }
+                        else
+                        {
+                            foreach (var materia in escuela.ListaDeMaterias)
+                            {
+                                Console.WriteLine($"ID: {materia.IdMateria}, Nombre: {materia.NombreMateria}, Fecha Ingreso: {materia.EstatusMateria}");
+                            }
+                        }
+
+                        Console.WriteLine("Presione Enter para continuar.");
+                        Console.ReadLine();
+
+                    }
+
+                    static void AsignarMateriaAlEstudiante(Escuela escuela)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("=== Agregar Materia ===");
+
+                        {
+
+                        }
+
+                    }
+
+                }
+
             }
+
 
             static void GestionAula(Escuela escuela)
             {
@@ -289,30 +428,6 @@
             {
 
             }
-
-
-
-
-            static void AgregarMaterias(Escuela escuela)
-            {
-                Console.Clear();
-                Console.WriteLine("=== Agregar Materia ===");
-
-                Console.WriteLine("Nombre de la Materia");
-                string NombreMateriaes = Console.ReadLine();
-
-                Console.Write("Ingrese el estado de la materia (Activo, Inactivo): ");
-                var estado = Enum.Parse<Materia.EstatusMateriaEnum>(Console.ReadLine(), true);
-
-                var materia = new Materia(NombreMateriaes, estado);
-                escuela.RegistrarMateria(materia);
-
-                Console.WriteLine("Materia registrada correctamente. Presione Enter para continuar.");
-                Console.ReadLine();
-
-
-            }
-
         }
     }
 }

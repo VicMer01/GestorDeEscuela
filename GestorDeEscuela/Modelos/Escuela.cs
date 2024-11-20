@@ -71,11 +71,28 @@ public class Escuela
 
     public void RegistrarMateria(Materia materiaE)
     {
+        materiaE.IdMateria = ContadorIdEscuela++;
 
         var MateriaNueva = new Materia(materiaE.NombreMateria, materiaE.EstatusMateria);
 
         ListaDeMaterias.Add(materiaE);
         Console.WriteLine($"Materia {MateriaNueva.NombreMateria} Con Id{MateriaNueva.IdMateria} se agrego correctamente");
+    }
+
+    public void EditarEstatusMateria(int IdmateriaE, Materia.EstatusMateriaEnum NuevoEstado)
+    {
+        Materia? MateriaEncontrada = ListaDeMaterias.Find(t => t.IdMateria == IdmateriaE);
+
+        if (MateriaEncontrada != null)
+        {
+            MateriaEncontrada.EstatusMateria = NuevoEstado;
+
+            Console.WriteLine($"Materia{MateriaEncontrada.NombreMateria} modificado con exito");
+            }
+            else
+            {
+                Console.WriteLine($"Materia No encontrado");
+            }
     }
 }
 
